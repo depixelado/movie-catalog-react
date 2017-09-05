@@ -1,9 +1,16 @@
 import React from 'react';
+
+import MainNav from '../components/mainNav';
+import SearchSection from '../components/SearchSection';
+
 import Counter from '../containers/Counter';
 
-const App = () => {
+const App = function App() {
   return (
-    <Counter />
+    <div className="wrapper">
+      <MainNav />
+      <SearchSection />
+    </div>
   )
 };
 

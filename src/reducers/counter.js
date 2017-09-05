@@ -8,7 +8,6 @@ const initialState = {
 }
 
 const counterReducer = (state = initialState.counter, action) => {
-  console.log(action)
   switch (action.type) {
     case INCREMENT_COUNTER:
       return state + action.step;

@@ -2,7 +2,7 @@ import React from 'react';
 import CounterBtn from '../components/CounterBtn';
 import CounterNumber from '../components/CounterNumber';
 
-const Counter = ({counter, incrementCounterByfive, decrementCounterByTwo}) => {
+const Counter = function Counter({counter, incrementCounterByfive, decrementCounterByTwo}) {
   return (
     <div className="container">
       <CounterNumber
