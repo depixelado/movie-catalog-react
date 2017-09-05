@@ -1,7 +1,7 @@
 import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
-} from '../actions';
+} from 'actions';
 
 const initialState = {
   counter: 0

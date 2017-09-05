@@ -2,5 +2,17 @@
   "presets": [
     ["latest", { "modules": false }],
     "react"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "actions": "./actions",
+        "components": "./components",
+        "containers": "./containers",
+        "reducers": "./reducers",
+        "selectors": "./selectors"
+      }
+    }]
   ]
 }

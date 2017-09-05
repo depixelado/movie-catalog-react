@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import {
   getCounter,
-} from '../selectors/counter';
+} from 'selectors/counter';
 
 import { 
   incrementCounter,
   decrementCounter,
-} from '../actions';
+} from 'actions';
 
-import Counter from '../components/Counter';
+import Counter from 'components/Counter';
 
 const mapStateToProps = (state) => ({
   counter: getCounter(state.counter)

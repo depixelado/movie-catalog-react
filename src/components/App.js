@@ -1,9 +1,7 @@
 import React from 'react';
 
-import MainNav from '../components/mainNav';
-import SearchSection from '../components/SearchSection';
-
-import Counter from '../containers/Counter';
+import MainNav from 'components/mainNav';
+import SearchSection from 'components/SearchSection';
 
 const App = function App() {
   return (
