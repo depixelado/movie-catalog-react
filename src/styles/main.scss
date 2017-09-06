@@ -2,5 +2,10 @@
 @import 'base/base';
 
 // Layouts
+@import 'layouts/base';
+@import 'layouts/search';
 
 // Modules
+@import 'modules/mainNav';
+@import 'modules/searchBox';
+@import 'modules/movieSnippet';

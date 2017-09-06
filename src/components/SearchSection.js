@@ -1,25 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import SearchBox from 'containers/SearchBox';
-import MovieListComponent from 'containers/MovieList';
+import MovieList from 'containers/MovieList';
 
-export default function searchSection({className, searchText}) {
+export default function searchSection({searchText}) {
   return (
-    <div className={className}>
+    <div className="searchSection">
       <SearchBox />
       <MovieList />
     </div>
   )
 };
-
-const MovieList = styled(MovieListComponent)`
-  margin: 0;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-`
-

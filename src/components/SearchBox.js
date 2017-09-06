@@ -1,8 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import propTypes from 'prop-types';
-
-import Input from 'components/form/Input';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -26,12 +23,15 @@ class SearchBox extends React.Component {
     } = this.props;
 
     return (
-      <SearchInput
-        type="text"
-        placeholder="Type a movie name"
-        value={searchText}
-        onChange={this._handleSearchInputChange}
-      />
+      <div className="searchBox">
+        <input
+          className="searchBox__searchText"
+          type="text"
+          placeholder="Type a movie name"
+          value={searchText}
+          onChange={this._handleSearchInputChange}
+        />
+      </div>
     );
   }
 }
@@ -40,10 +40,5 @@ SearchBox.propTypes = {
   searchText: propTypes.string,
   updateSearchText: propTypes.func,
 };
-
-const SearchInput = Input.extend`
-  width: 100%;
-  max-width: 500px;
-`
 
 export default SearchBox;

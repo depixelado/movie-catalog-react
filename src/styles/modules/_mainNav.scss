@@ -1,0 +1,17 @@
+.mainNav {
+  width: 50px;
+  background: #004358;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    color: #004358;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    padding: 2px;
+    background-color: white;
+    border-radius: 100%;
+  }
+}
