@@ -6,7 +6,48 @@ import React from 'react';
 import App from 'components/App';
 import reducer from 'reducers';
 
-const store = createStore(reducer);
+let store;
+const initialState = {
+  searchBox: {
+    searchText: 'Star wars'
+  },
+  movies: [
+    {
+      title: 'Star Wars IV',
+      thumb: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg',
+      description: `Per vestibulum sociosqu sapien parturient potenti metus scelerisque 
+        fermentum vestibulum ad adipiscing vel condimentum a adipiscing id parturient id. 
+        Imperdiet habitant leo semper dui phasellus luctus facilisi nibh mollis 
+        mi posuere ultrices parturient bibendum parturient.`
+    },
+    {
+      title: 'Star Wars V',
+      thumb: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg',
+      description: `Per vestibulum sociosqu sapien parturient potenti metus scelerisque 
+        fermentum vestibulum ad adipiscing vel condimentum a adipiscing id parturient id. 
+        Imperdiet habitant leo semper dui phasellus luctus facilisi nibh mollis 
+        mi posuere ultrices parturient bibendum parturient.`
+    },
+    {
+      title: 'Star Wars VI',
+      thumb: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg',
+      description: `Per vestibulum sociosqu sapien parturient potenti metus scelerisque 
+        fermentum vestibulum ad adipiscing vel condimentum a adipiscing id parturient id. 
+        Imperdiet habitant leo semper dui phasellus luctus facilisi nibh mollis 
+        mi posuere ultrices parturient bibendum parturient.`
+    }
+  ]
+}
+
+if (process.env.NODE_ENV === 'production') {
+  store = createStore(reducer, initialState);
+} else {
+  store = createStore(
+    reducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+}
 
 render(
   <Provider store={store}>

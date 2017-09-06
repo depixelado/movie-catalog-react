@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import searchBox from './searchBox';
+import movies from './movies';
 
-const counterApp = combineReducers({
-  counter
+const whatseenApp = combineReducers({
+  searchBox,
+  movies,
 })
 
-export default counterApp
+export default whatseenApp
