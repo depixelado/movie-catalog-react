@@ -12,6 +12,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // Javascript files
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -19,6 +20,12 @@ module.exports = {
           'babel-loader',
         ],
       },
+      
+      // SASS
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      }
     ],
   },
   resolve: {
