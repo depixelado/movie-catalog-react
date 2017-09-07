@@ -9,6 +9,7 @@ class MovieSnippet extends React.Component {
   render() {
     const {
       title,
+      year,
       description,
       thumb,
     } = this.props;
@@ -16,8 +17,14 @@ class MovieSnippet extends React.Component {
     return (
       <div className="movieSnippet">
         <img className="movieSnippet__thumb" src={thumb} />
-        <div className="movieSnippet__title">{title}</div>
-        <div>{description}</div>
+        <div className="movieSnippet__info">
+          <div className="movieSnippet__title">
+            {title}
+          </div>
+          <div className="movieSnippet__year">
+            {year}
+          </div>
+        </div>
       </div>
     );
   }

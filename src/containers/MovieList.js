@@ -3,13 +3,19 @@ import { connect } from 'react-redux';
 
 import { 
   updateMovies,
-} from 'actions/movies';
+} from 'actions/moviesCatalog';
+
+import {
+  getMovies,
+  getMovieCatalogStatus
+} from 'selectors/moviesCatalog';
 
 import MovieList from 'components/MovieList';
 
 const mapStateToProps = (state) => {
   return ({
-    movies: state.movies
+    status: getMovieCatalogStatus(state),
+    movies: getMovies(state)
   })
 }
 

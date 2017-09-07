@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import MovieSnippet from 'components/MovieSnippet';
+import Spinner from 'components/Spinner';
 
 class MovieList extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class MovieList extends React.Component {
 
   render() {
     const {
+      status,
       movies = [],
       className,
     } = this.props;
@@ -17,11 +19,13 @@ class MovieList extends React.Component {
     return (
       <ul className="movieList">
         { 
-          movies.map((movie, index) => (
-            <li key={index}>
-              <MovieSnippet {...movie} />
-            </li>
-          ))
+          (status === 'LOADING') 
+            ? <Spinner />
+            : movies.map((movie, index) => (
+                <li key={index}>
+                  <MovieSnippet {...movie} />
+                </li>
+              ))
         }
       </ul>
     );

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import searchBox from './searchBox';
-import movies from './movies';
+import moviesCatalog from './moviesCatalog';
 
 const whatseenApp = combineReducers({
   searchBox,
-  movies,
+  moviesCatalog,
 })
 
 export default whatseenApp
