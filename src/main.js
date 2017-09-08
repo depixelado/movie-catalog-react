@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose} from 'redux';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import React from 'react';
@@ -18,13 +18,16 @@ const initialState = {
 if (process.env.NODE_ENV === 'production') {
   store = createStore(reducer, initialState);
 } else {
-  store = createStore(
-    reducer,
-    initialState,
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const enhancers = composeEnhancers(
     applyMiddleware(
       thunkMiddleware, // lets us dispatch() functions
     ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+  store = createStore(
+    reducer,
+    initialState,
+    enhancers,
   )
 }
 
