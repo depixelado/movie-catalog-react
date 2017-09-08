@@ -12,22 +12,8 @@ import {
 const initialState = {
   isFetching: false,
   didInvalidate: false,
-  items: []
-}
-
-// const items = (state = initialState.items, action) => {
-//   switch (action.type) {
-//     default:
-//       return state
-//   }
-// }
-
-// const status = (state = initialState.status, action) => {
-//   switch (action.type) {
-//     default:
-//       return state
-//   }
-// }
+  items: [],
+};
 
 const moviesCatalog = (state = initialState, action) => {
   switch (action.type) {
@@ -50,7 +36,7 @@ const moviesCatalog = (state = initialState, action) => {
       });
 
     default:
-      return state
+      return state;
   }
 };
 

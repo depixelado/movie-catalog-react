@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { 
@@ -12,13 +11,13 @@ import {
 import SearchBox from 'components/SearchBox';
 
 const mapStateToProps = (state) => ({
-  searchText: state.searchBox.searchText
-})
+  searchText: state.searchBox.searchText,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   updateSearchText: (val) => dispatch(updateSearchText(val)),
   fetchMovies: (val) => dispatch(fetchMovies(val)),
-})
+});
 
 export default connect(
   mapStateToProps,

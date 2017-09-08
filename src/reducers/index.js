@@ -5,6 +5,6 @@ import moviesCatalog from './moviesCatalog';
 const whatseenApp = combineReducers({
   searchBox,
   moviesCatalog,
-})
+});
 
-export default whatseenApp
+export default whatseenApp;

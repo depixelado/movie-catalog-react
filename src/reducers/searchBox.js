@@ -6,18 +6,17 @@ import {
 
 const initialState = {
   searchText: '',
-}
+};
 
 const searchText = (state = initialState.searchText, action) => {
   switch (action.type) {
     case UPDATE_SEARCHTEXT:
       return action.searchText;
     default:
-      return state
+      return state;
   }
-}
-
+};
 
 export default combineReducers({
-  searchText
+  searchText,
 });
