@@ -11,9 +11,11 @@ class SearchBox extends React.Component {
   _handleSearchInputChange(e) {
     const {
       updateSearchText,
+      fetchMovies,
     } = this.props;
 
     updateSearchText(e.target.value);
+    fetchMovies(e.target.value);
   }
 
   render () {

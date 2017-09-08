@@ -5,6 +5,10 @@ import {
   updateSearchText,
 } from 'actions/searchBox';
 
+import { 
+  fetchMovies,
+} from 'actions/moviesCatalog';
+
 import SearchBox from 'components/SearchBox';
 
 const mapStateToProps = (state) => ({
@@ -13,6 +17,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateSearchText: (val) => dispatch(updateSearchText(val)),
+  fetchMovies: (val) => dispatch(fetchMovies(val)),
 })
 
 export default connect(

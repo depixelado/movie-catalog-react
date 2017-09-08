@@ -4,3 +4,4 @@ export const updateSearchText = (searchText) => ({
   type: UPDATE_SEARCHTEXT,
   searchText,
 });
+
