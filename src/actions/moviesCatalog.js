@@ -22,24 +22,23 @@ export const receiveMovies = (searchText, json) => ({
     title: movie.title,
     description: movie.overview,
     thumb: `${config.api.imgUrlBase}${movie.poster_path}`,
-    year: movie.release_date.split('-')[0]
+    year: movie.release_date.split('-')[0],
   })),
-  receivedAt: Date.now()
+  receivedAt: Date.now(),
 });
 
 export function fetchMovies(searchText) {
-  return function (dispatch) {
-    dispatch(requestMovies(searchText))
+  return function fetchMoviesThunk(dispatch) {
+    dispatch(requestMovies(searchText));
 
     const url = `${config.api.urlBase}/search/movie?query=${searchText}&api_key=${config.api.key}`;
     return fetch(url)
       .then(
         response => response.json(),
-        error => console.log('An error occured.', error)
+        error => console.log('An error occured.', error),
       )
       .then(json =>
-        dispatch(receiveMovies(searchText, json))
-      )
-  }
+        dispatch(receiveMovies(searchText, json)),
+      );
+  };
 }
-
