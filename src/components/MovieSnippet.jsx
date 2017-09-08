@@ -15,9 +15,9 @@ class MovieSnippet extends React.Component {
     } = this.props;
 
     return (
-      <div className="movieSnippet">
+      <div className="movieSnippet animated fadeIn">
         <img className="movieSnippet__thumb" src={thumb} />
-        <div className="movieSnippet__info">
+        <div className="movieSnippet__info animated">
           <div className="movieSnippet__title">
             {title}
           </div>

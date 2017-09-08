@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import SearchBox from 'components/SearchBox';
+
 import { 
   updateSearchText,
 } from 'actions/searchBox';
@@ -8,7 +10,9 @@ import {
   fetchMovies,
 } from 'actions/moviesCatalog';
 
-import SearchBox from 'components/SearchBox';
+import {
+  getSearchText,
+} from 'selectors/searchBox';
 
 const mapStateToProps = (state) => ({
   searchText: state.searchBox.searchText,
