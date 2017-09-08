@@ -11,15 +11,14 @@ class MovieList extends React.Component {
 
   render() {
     const {
-      status,
+      isFetching,
       movies = [],
-      className,
     } = this.props;
 
     return (
       <ul className="movieList">
         { 
-          (status === 'LOADING') 
+          (isFetching) 
             ? <Spinner />
             : movies.map((movie, index) => (
                 <li key={index}>

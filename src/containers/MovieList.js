@@ -7,20 +7,19 @@ import {
 
 import {
   getMovies,
-  getMovieCatalogStatus
+  isFetching,
 } from 'selectors/moviesCatalog';
 
 import MovieList from 'components/MovieList';
 
 const mapStateToProps = (state) => {
   return ({
-    status: getMovieCatalogStatus(state),
+    isFetching: isFetching(state),
     movies: getMovies(state)
   })
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  updateMovies: (val) => dispatch(updateMovies(val)),
 })
 
 export default connect(

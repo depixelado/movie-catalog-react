@@ -1,2 +1,2 @@
 export const getMovies = (state) => state.moviesCatalog.items;
-export const getMovieCatalogStatus = (state) => state.moviesCatalog.status;
+export const isFetching = (state) => state.moviesCatalog.isFetching;
