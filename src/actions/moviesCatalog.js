@@ -20,12 +20,6 @@ export const requestMovies = (searchText) => ({
 export const receiveMovies = (searchText, data) => ({
   type: RECEIVE_MOVIES,
   searchText,
-  // movies: json.results.map(movie => ({
-  //   title: movie.title,
-  //   description: movie.overview,
-  //   thumb: `${config.api.imgUrlBase}${movie.poster_path}`,
-  //   year: movie.release_date.split('-')[0],
-  // })),
   data,
   receivedAt: Date.now(),
 });
@@ -40,9 +34,7 @@ export function fetchMovies(searchText) {
         response => response.json(),
         error => console.log('An error occured.', error),
       )
-      .then(json => {
-        const normalizedData = normalize(json.results, [movieSchema]);
-        dispatch(receiveMovies(searchText, normalizedData));
-      });
+      .then(json => normalize(json.results, [movieSchema]))
+      .then(normalizedData => dispatch(receiveMovies(searchText, normalizedData)));
   };
 }
