@@ -12,7 +12,8 @@
         "components": "./components",
         "containers": "./containers",
         "reducers": "./reducers",
-        "selectors": "./selectors"
+        "selectors": "./selectors",
+        "schemas": "./schemas"
       }
     }]
   ]

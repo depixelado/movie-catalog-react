@@ -9,7 +9,7 @@ class MovieSnippet extends React.Component {
   render() {
     const {
       title,
-      year,
+      releaseYear,
       description,
       thumb,
     } = this.props;
@@ -22,7 +22,7 @@ class MovieSnippet extends React.Component {
             {title}
           </div>
           <div className="movieSnippet__year">
-            {year}
+            {releaseYear}
           </div>
         </div>
       </div>

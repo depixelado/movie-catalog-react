@@ -2,7 +2,7 @@ import { normalize } from 'normalizr';
 import fetch from 'isomorphic-fetch';
 
 import config from '../config';
-import { movieSchema } from '../schema';
+import movieSchema from 'schemas/movie';
 
 export const REQUEST_MOVIES = 'whatseen/moviesCatalog/REQUEST_MOVIES';
 export const RECEIVE_MOVIES = 'whatseen/moviesCatalog/RECEIVE_MOVIES';
