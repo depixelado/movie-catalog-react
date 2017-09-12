@@ -1,0 +1,32 @@
+.movieViewer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  &__background {
+    background-color: rgba(0,0,0, .7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__box {
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #333;
+    width: 70vw;
+    height: 80vh;
+    z-index: 2;
+    top: 50vh;
+    left: 50vw;
+    margin-top: -40vh;
+    margin-left: -35vw;
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 28px;
+  }
+}

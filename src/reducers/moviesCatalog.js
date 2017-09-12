@@ -32,7 +32,7 @@ const moviesCatalog = (state = initialState, action) => {
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
-        items: action.movies,
+        items: action.data.result,
       });
 
     default:

@@ -1,6 +1,8 @@
+import { normalize } from 'normalizr';
 import fetch from 'isomorphic-fetch';
 
 import config from '../config';
+import { movieSchema } from '../schema';
 
 export const REQUEST_MOVIES = 'whatseen/moviesCatalog/REQUEST_MOVIES';
 export const RECEIVE_MOVIES = 'whatseen/moviesCatalog/RECEIVE_MOVIES';
@@ -15,15 +17,16 @@ export const requestMovies = (searchText) => ({
   searchText,
 });
 
-export const receiveMovies = (searchText, json) => ({
+export const receiveMovies = (searchText, data) => ({
   type: RECEIVE_MOVIES,
   searchText,
-  movies: json.results.map(movie => ({
-    title: movie.title,
-    description: movie.overview,
-    thumb: `${config.api.imgUrlBase}${movie.poster_path}`,
-    year: movie.release_date.split('-')[0],
-  })),
+  // movies: json.results.map(movie => ({
+  //   title: movie.title,
+  //   description: movie.overview,
+  //   thumb: `${config.api.imgUrlBase}${movie.poster_path}`,
+  //   year: movie.release_date.split('-')[0],
+  // })),
+  data,
   receivedAt: Date.now(),
 });
 
@@ -37,8 +40,9 @@ export function fetchMovies(searchText) {
         response => response.json(),
         error => console.log('An error occured.', error),
       )
-      .then(json =>
-        dispatch(receiveMovies(searchText, json)),
-      );
+      .then(json => {
+        const normalizedData = normalize(json.results, [movieSchema]);
+        dispatch(receiveMovies(searchText, normalizedData));
+      });
   };
 }

@@ -1,9 +1,10 @@
 {
   "presets": [
-    ["latest", { "modules": false }],
+    ["latest"],
     "react"
   ],
   "plugins": [
+    "transform-object-rest-spread",
     ["module-resolver", {
       "root": ["./src"],
       "alias": {

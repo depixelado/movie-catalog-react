@@ -10,13 +10,9 @@ import reducer from 'reducers';
 import './styles/main.scss';
 
 let store;
-const initialState = {
-  moviesCatalog: {
-  }
-}
 
 if (process.env.NODE_ENV === 'production') {
-  store = createStore(reducer, initialState);
+  store = createStore(reducer);
 } else {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const enhancers = composeEnhancers(
@@ -26,7 +22,6 @@ if (process.env.NODE_ENV === 'production') {
   )
   store = createStore(
     reducer,
-    initialState,
     enhancers,
   )
 }
