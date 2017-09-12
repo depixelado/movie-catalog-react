@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import React from 'react';
 import thunkMiddleware from 'redux-thunk';
 
-import App from 'components/App';
+import App from 'containers/App';
 import reducer from 'reducers';
 
 import './styles/main.scss';

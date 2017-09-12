@@ -7,9 +7,12 @@ import {
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_FAILURE,
   FETCH_MOVIES_SUCCESS,
+  OPEN_MOVIE_EXPLORER,
+  CLOSE_MOVIE_EXPLORER,
 } from 'actions/moviesCatalog';
 
 const initialState = {
+  movieExplorer: null,
   isFetching: false,
   didInvalidate: false,
   items: [],
@@ -34,6 +37,18 @@ const moviesCatalog = (state = initialState, action) => {
         didInvalidate: false,
         items: action.data.result,
       });
+
+    case OPEN_MOVIE_EXPLORER:
+      return {
+        ...state,
+        movieExplorer: action.movieId,
+      };
+
+    case CLOSE_MOVIE_EXPLORER:
+      return {
+        ...state,
+        movieExplorer: null,
+      };
 
     default:
       return state;

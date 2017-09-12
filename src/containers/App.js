@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { 
+  updateMovies,
+} from 'actions/moviesCatalog';
+
 import {
-  getMovies,
-  isFetching,
+  getMovieOnExplorer,
 } from 'selectors/moviesCatalog';
 
-import MovieList from 'components/MovieList';
+import App from 'components/App';
 
 const mapStateToProps = (state) => ({
-  isFetching: isFetching(state),
-  movies: getMovies(state),
+  movieOnExplorer: getMovieOnExplorer(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -19,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MovieList);
+)(App);

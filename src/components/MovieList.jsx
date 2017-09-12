@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import MovieSnippet from 'components/MovieSnippet';
+import MovieSnippet from 'containers/MovieSnippet';
 import Spinner from 'components/Spinner';
 
 class MovieList extends React.Component {

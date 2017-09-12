@@ -12,6 +12,9 @@ export const FETCH_MOVIES_REQUEST = 'whatseen/moviesCatalog/FETCH_MOVIES_REQUEST
 export const FETCH_MOVIES_FAILURE = 'whatseen/moviesCatalog/FETCH_MOVIES_FAILURE';
 export const FETCH_MOVIES_SUCCESS = 'whatseen/moviesCatalog/FETCH_MOVIES_SUCCESS';
 
+export const OPEN_MOVIE_EXPLORER = 'whatseen/moviesCatalog/OPEN_MOVIE_EXPLORER';
+export const CLOSE_MOVIE_EXPLORER = 'whatseen/moviesCatalog/CLOSE_MOVIE_EXPLORER';
+
 export const requestMovies = (searchText) => ({
   type: REQUEST_MOVIES,
   searchText,
@@ -36,5 +39,18 @@ export function fetchMovies(searchText) {
       )
       .then(json => normalize(json.results, [movieSchema]))
       .then(normalizedData => dispatch(receiveMovies(searchText, normalizedData)));
+  };
+}
+
+export function openMovieExplorer(movieId) {
+  return {
+    type: OPEN_MOVIE_EXPLORER,
+    movieId,
+  };
+}
+
+export function closeMovieExplorer() {
+  return {
+    type: CLOSE_MOVIE_EXPLORER,
   };
 }
