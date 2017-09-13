@@ -16,7 +16,7 @@ class SearchBox extends React.Component {
     } = this.props;
 
     updateSearchText(e.target.value);
-    fetchMovies(e.target.value);
+    if (e.target.value !== '') fetchMovies(e.target.value);
   }
 
   render () {
@@ -34,9 +34,17 @@ class SearchBox extends React.Component {
           value={searchText}
           onChange={this._handleSearchInputChange}
         />
-        <div className="searchBox__filters">
+        <div className="searchBox__actions">
           <FontAwesome 
             name="bookmark-o"
+            size="2x"
+          />
+          <FontAwesome 
+            name="heart-o"
+            size="2x"
+          />
+          <FontAwesome 
+            name="eye"
             size="2x"
           />
         </div>

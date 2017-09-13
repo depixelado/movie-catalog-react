@@ -1,6 +1,17 @@
 .searchBox {
+  display: flex;
+
   &__searchText {
     width: 100%;
     max-width: 500px;
+  }
+
+  &__actions {
+    margin-left: 10px;
+    color: white;
+
+    span {
+      margin-right: 10px;
+    }
   }
 }
