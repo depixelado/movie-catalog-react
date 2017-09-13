@@ -29,4 +29,15 @@
   &__title {
     font-size: 28px;
   }
+
+  &__bigImage {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 4px;
+
+    img {
+      width: 100%;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import MainNav from 'components/mainNav';
 import SearchSection from 'components/SearchSection';
-import MovieViewer from 'components/movieViewer';
+import MovieViewer from 'containers/movieViewer';
 
 const App = function App({movieOnExplorer}) {
   return (
