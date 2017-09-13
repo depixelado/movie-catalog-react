@@ -5,7 +5,11 @@
 }
 
 .searchSection {
-  background: #eee;
+  background: #162333;
   flex: 1;
   padding: 10px;
+
+  &--blurred {
+    filter: blur(5px);
+  }
 }

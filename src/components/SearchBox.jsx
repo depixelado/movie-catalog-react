@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import FontAwesome from 'react-fontawesome';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -33,6 +34,12 @@ class SearchBox extends React.Component {
           value={searchText}
           onChange={this._handleSearchInputChange}
         />
+        <div className="searchBox__filters">
+          <FontAwesome 
+            name="bookmark-o"
+            size="2x"
+          />
+        </div>
       </div>
     );
   }

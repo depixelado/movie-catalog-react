@@ -7,8 +7,7 @@ import MovieViewer from 'containers/movieViewer';
 const App = function App({movieOnExplorer}) {
   return (
     <div className="app">
-      <MainNav />
-      <SearchSection />
+      <SearchSection movieExplorerOpened={!!movieOnExplorer} />
       {
         movieOnExplorer !== null 
           ? <MovieViewer movie={movieOnExplorer} />

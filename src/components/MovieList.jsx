@@ -21,9 +21,11 @@ class MovieList extends React.Component {
           (isFetching) 
             ? <Spinner />
             : movies.map((movie, index) => (
-                <li key={index}>
-                  <MovieSnippet {...movie} />
-                </li>
+                (movie.poster_path)
+                ? <li key={index}>
+                    <MovieSnippet {...movie} />
+                  </li>
+                : ''
               ))
         }
       </ul>

@@ -1,7 +1,6 @@
 .movieSnippet {
   background: white;
-  border-radius: 4px;
-  box-shadow: 2px 2px 2px #ddd;
+  border-radius: 2px;
   font-size: 12px;
   color: #666;
   overflow: hidden;
@@ -45,5 +44,11 @@
 
   &__year {
     font-size: 12px;
+  }
+
+  &__stars{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }

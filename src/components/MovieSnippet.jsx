@@ -24,6 +24,7 @@ class MovieSnippet extends React.Component {
       releaseYear,
       description,
       thumb,
+      vote_average,
     } = this.props;
 
     return (
@@ -40,6 +41,12 @@ class MovieSnippet extends React.Component {
             name="eye"
             size="2x"
           />
+          <div className="movieSnippet__stars">
+            {vote_average}
+            <FontAwesome 
+              name="star"
+            />
+          </div>
         </div>
       </div>
     );
