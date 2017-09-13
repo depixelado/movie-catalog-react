@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import _ from 'lodash';
 
 import {
   REQUEST_MOVIES,
@@ -10,6 +11,10 @@ import {
   OPEN_MOVIE_EXPLORER,
   CLOSE_MOVIE_EXPLORER,
 } from 'actions/moviesCatalog';
+
+import {
+  UPDATE_SEARCHTEXT,
+} from 'actions/searchBox';
 
 const initialState = {
   movieExplorer: null,
@@ -32,10 +37,12 @@ const moviesCatalog = (state = initialState, action) => {
       });
 
     case RECEIVE_MOVIES:
+      let items = _.concat(_.get(state, 'items', []), action.data.result);
+
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
-        items: action.data.result,
+        items,
       });
 
     case OPEN_MOVIE_EXPLORER:
@@ -48,6 +55,12 @@ const moviesCatalog = (state = initialState, action) => {
       return {
         ...state,
         movieExplorer: null,
+      };
+
+    case UPDATE_SEARCHTEXT:
+      return {
+        ...state,
+        items: [],
       };
 
     default:

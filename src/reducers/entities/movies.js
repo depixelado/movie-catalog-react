@@ -4,17 +4,21 @@ import {
   RECEIVE_MOVIES
 } from 'actions/moviesCatalog';
 
+const initialState = {
+  byId: {},
+  allIds: [],
+};
 
-const entitiesMovies = (state = {}, action) => {
+const entitiesMovies = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_MOVIES:
       return {
         ...state,
         byId: {
-          ..._.get('state.entities.movies.byId', {}),
+          ...state.byId,
           ...action.data.entities.movies,
         },
-        allIds: action.data.result,
+        allIds: _.concat(state, _.get('entities.movies.allIds', []), action.data.result),
       };
     default:
       return state;

@@ -1,8 +1,11 @@
+import _ from 'lodash';
+
 export const getMovie = (state, movieId) => state.entities.movies.byId[movieId];
 
-export const getMovies = (state) => state.moviesCatalog.items.map(
-  (movieId) => getMovie(state, movieId),
-);
+export const getMovies = (state) => {
+  const items = _.get(state, 'moviesCatalog.items', []);
+  return items.map((movieId) => getMovie(state, movieId));
+};
 
 export const isFetching = (state) => state.moviesCatalog.isFetching;
 

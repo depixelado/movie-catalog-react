@@ -27,11 +27,11 @@ export const receiveMovies = (searchText, data) => ({
   receivedAt: Date.now(),
 });
 
-export function fetchMovies(searchText) {
+export function fetchMovies(searchText = '', page = 1) {
   return function fetchMoviesThunk(dispatch) {
     dispatch(requestMovies(searchText));
 
-    const url = `${config.api.urlBase}/search/movie?query=${searchText}&api_key=${config.api.key}`;
+    const url = `${config.api.urlBase}/search/movie?query=${searchText}&page=${page}&api_key=${config.api.key}`;
     return fetch(url)
       .then(
         response => response.json(),
