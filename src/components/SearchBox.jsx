@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
+import _ from 'lodash';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -9,14 +10,24 @@ class SearchBox extends React.Component {
     this._handleSearchInputChange = this._handleSearchInputChange.bind(this);
   }
 
-  _handleSearchInputChange(e) {
+  componentWillMount() {
     const {
-      updateSearchText,
       fetchMovies,
     } = this.props;
 
+    this.fetchMoviesDebounced = _.debounce(fetchMovies, 250);
+  }
+
+  _handleSearchInputChange(e) {
+    const {
+      updateSearchText,
+    } = this.props;
+
     updateSearchText(e.target.value);
-    if (e.target.value !== '') fetchMovies(e.target.value);
+
+    if (e.target.value !== '') {
+      this.fetchMoviesDebounced(e.target.value)
+    }
   }
 
   render () {

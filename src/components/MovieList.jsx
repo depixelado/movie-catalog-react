@@ -50,7 +50,13 @@ class MovieList extends React.Component {
       </InfiniteScroll>
     );
 
-    return (searchText) ? list : null;
+    return (searchText) 
+      ? list 
+      : (
+        <div className="movieList__empty">
+          {'Type something on the search box!'}
+        </div>
+      );
   }
 }
 
