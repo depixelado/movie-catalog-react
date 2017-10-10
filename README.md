@@ -1,6 +1,6 @@
-Watch.io
+Movie Catalog React
 ---
-An app to help you discover and manage the movies want to see
+An app to help you discover and manage movies you want to see
 
 Setup
 ---

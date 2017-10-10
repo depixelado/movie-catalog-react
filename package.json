@@ -1,7 +1,7 @@
 {
-  "name": "watchio",
+  "name": "movie-catalog-react",
   "version": "1.0.0",
-  "description": "Watch.io",
+  "description": "Movie catalog to help you discover and manage movies you want to see",
   "main": "index.js",
   "scripts": {
     "compile": "webpack",
