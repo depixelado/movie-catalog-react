@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/www'));
 
-app.listen(3000, function server() {
+const server = app.listen(3000, () => {
   const host = server.address().address;
   const port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
