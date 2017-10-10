@@ -20,9 +20,11 @@ class MovieViewer extends React.Component {
       title,
       overview,
       backdrop,
+      thumb,
     } = this.props.movie;
 
-    const background = "url('" + backdrop + "')";
+    const bgImg = backdrop ? backdrop : thumb;
+    const background = "url('" + bgImg + "')";
 
     return (
       <div className="movieViewer">

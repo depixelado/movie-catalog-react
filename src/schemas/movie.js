@@ -8,7 +8,7 @@ function map() {
     strategy: (item, value) => ({
       ...value,
       thumb: `${config.api.imgUrlBase}${value.poster_path}`,
-      backdrop: `https://image.tmdb.org/t/p/w1400_and_h450_bestv2/${value.backdrop_path}`,
+      backdrop: value.backdrop_path ? `https://image.tmdb.org/t/p/w1400_and_h450_bestv2/${value.backdrop_path}` : null,
       releaseYear: value.release_date.split('-')[0],
     }),
   };
