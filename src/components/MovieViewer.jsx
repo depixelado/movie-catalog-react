@@ -1,13 +1,23 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 
 class MovieViewer extends React.Component {
   constructor(props) {
     super(props);
 
     this._handleClickBackground = this._handleClickBackground.bind(this);
+    this._handleClickCloseBtn = this._handleClickCloseBtn.bind(this);
   }
 
   _handleClickBackground() {
+    const {
+      closeMovieExplorer,
+    } = this.props;
+
+    closeMovieExplorer();
+  }
+
+  _handleClickCloseBtn() {
     const {
       closeMovieExplorer,
     } = this.props;
@@ -35,7 +45,18 @@ class MovieViewer extends React.Component {
         </div>
         <div className="movieViewer__box">
           <div className="movieViewer__column1">
-            <div className="movieViewer__bigImage" style={{backgroundImage,}}>
+            <div
+              className="movieViewer__closeBtn"
+              onClick={this._handleClickCloseBtn}
+            >
+              <FontAwesome 
+                name="close"
+              />
+            </div>
+            <div 
+              className="movieViewer__bigImage"
+              style={{backgroundImage,}}
+            >
             </div>
             <div className="movieViewer__title">
               {title}
