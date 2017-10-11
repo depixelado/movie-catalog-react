@@ -23,8 +23,8 @@ class MovieViewer extends React.Component {
       thumb,
     } = this.props.movie;
 
-    const bgImg = backdrop ? backdrop : thumb;
-    const background = "url('" + bgImg + "')";
+    const bgSrc = backdrop ? backdrop : thumb;
+    const backgroundImage = "url('" + bgSrc + "')";
 
     return (
       <div className="movieViewer">
@@ -35,7 +35,7 @@ class MovieViewer extends React.Component {
         </div>
         <div className="movieViewer__box">
           <div className="movieViewer__column1">
-            <div className="movieViewer__bigImage" style={{background,}}>
+            <div className="movieViewer__bigImage" style={{backgroundImage,}}>
             </div>
             <div className="movieViewer__title">
               {title}
