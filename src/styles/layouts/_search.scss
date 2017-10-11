@@ -9,8 +9,27 @@
 
   li {
     margin: 0 5px 5px 0;
-    width: 150px;
-    height: 225px;
+    height: 0;
+    position: relative;
+
+    width: calc(100%/2 - 5px);
+    padding-bottom: calc(((100%/2) - 5px) *1.5);
+    @include breakpoint(phablet) {
+      width: calc(100%/4 - 5px);
+      padding-bottom: calc(((100%/4) - 5px) *1.5);
+    }
+    @include breakpoint(tablet) {
+      width: calc(100%/6 - 5px);
+      padding-bottom: calc(((100%/6) - 5px) *1.5);
+    }
+    @include breakpoint(laptop) {
+      width: calc(100%/8 - 5px);
+      padding-bottom: calc(((100%/8) - 5px) *1.5);
+    }
+    @include breakpoint(desktop) {
+      width: calc(100%/9 - 5px);
+      padding-bottom: calc(((100%/9) - 5px) *1.5);
+    }
   }
 
   &__empty {
