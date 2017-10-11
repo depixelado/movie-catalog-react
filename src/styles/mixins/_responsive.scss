@@ -1,0 +1,20 @@
+// Breakpoints mixin. Based on bootstrap breakpoints
+// https://v4-alpha.getbootstrap.com/layout/overview/
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) { @content ; }
+ }
+  @else if $point == laptop {
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { @content ; }
+ }
+   @else if $point == tablet {
+     // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { @content ; }
+ }
+  @else if $point == phablet {
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px)  { @content ; }
+ }
+}
